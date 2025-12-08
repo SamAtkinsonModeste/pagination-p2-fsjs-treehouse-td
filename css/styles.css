@@ -1,0 +1,350 @@
+/* New FSJS project 2 - List Pagination and Filter - v2 - Data version */
+
+:root {
+  --text-color: #fffaf0;
+  --accent-color: #f00;
+  --primary-black-color: #000;
+  --transparent2-prim-black-color: rgba(0, 0, 0, .8);
+  --transparent-prim-black-color: rgba(0, 0, 0, .6);
+  --box-shad-color: #686161;
+  --form-el-bg-color: #1b1b1b;
+  --scroll-handle-color: rgb(201, 181, 181);
+  --image-container-grad-bg-color: #0a0402;
+  --student-border-color: #5a5858;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'aptly', Helvetica, sans-serif;
+  letter-spacing: 1px;
+  background-color: #000;
+  background-image: url(../img/bg-red-blk-hex.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+.full-width {
+  width: 100%;
+}
+
+
+.page {
+  max-width: 1024px;
+  margin: auto;
+  width: 95%;
+  border: solid green 2px;
+}
+
+
+.header-container {
+  background-color: #000;
+  height: 150px;
+}
+
+
+
+header h2 {
+  font-family: amandine, sans-serif;
+  text-transform: uppercase;
+  color: var(--text-color);
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+.tablet-uniName {
+  display: none;
+}
+
+.search-container {
+  border-top: solid 1px red;
+  border-bottom: solid 1px red;
+}
+
+
+.input-height {
+  height: 50px;
+}
+
+.input-container {
+  position: relative;
+  margin-top: 10px;
+  width: 300px;
+  /* border: solid green 1px; */
+}
+
+
+#student-search {
+  background: var(--form-el-bg-color);
+  border-radius: 3px;
+  color: var(--text-color);
+  padding: 1em;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  cursor: pointer;
+}
+
+
+.search-icon {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  display: block;
+  width: 44px;
+  height: 44px;
+  border-radius: 5px;
+  background: var(--accent-color);
+  border: solid 2px var(--primary-black-color);
+  box-shadow: 0 0 15px var(--primary-black-color) inset;
+}
+
+.up-label {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0.75rem;
+  color: rgba(255, 250, 240, 0.7);
+  transition: transform 0.2s ease;
+}
+
+input:focus+.up-label {
+  transform: translateY(-50px);
+  color: rgba(255, 250, 240, 0.9);
+}
+
+
+.pagination-buttons {
+  margin: 30px 0;
+  text-align: center;
+  background: var(--primary-black-color);
+  border-top: solid 1px red;
+  border-bottom: solid 1px red;
+}
+
+.link-list {
+  border: solid 1px purple;
+}
+
+.link-list li button {
+  width: 30px;
+  height: 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  outline: none;
+  background: var(--accent-color);
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--text-color);
+  text-shadow: 0px 1px var(--primary-black-color);
+  box-shadow: 0 1px 2px 0 rgba(255, 250, 240, 0.9);
+  transition: 0.4s;
+}
+
+.pagination-buttons li button.active,
+.pagination-buttons li button:hover {
+  background-color: var(--text-color);
+  color: var(--accent-color);
+  box-shadow: 0 1px 8px 0 var(--accent-color);
+}
+
+
+
+/* .student-search {
+  display: flex;
+} */
+
+/* .student-search input {
+  width: 100%;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid rgb(30, 144, 255);
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.student-search input::placeholder {
+  color: #929b9e;
+}
+
+.student-search button {
+  cursor: pointer;
+  width: 55px;
+  border-radius: 0 4px 4px 0;
+  border: 1px solid #1e90ff;
+  border-left: none;
+  padding: 0px 5px;
+  font-size: 14px;
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+.student-search button img {
+  width: 25px;
+}
+
+
+
+.student-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 2em;
+}
+
+.student-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5em;
+  background-color: #fff;
+  border-radius: 2px;
+  -webkit-transition: box-shadow .3s ease;
+  transition: box-shadow .3s ease;
+}
+
+.avatar {
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: white;
+  background-blend-mode: multiply, luminosity;
+  width: 90px;
+  height: 90px;
+  margin: auto auto 15px;
+}
+
+.student-details::before {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: rgba(30, 144, 255, 0.25);
+  border-radius: 50%;
+}
+
+.student-item h3 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.45em;
+  color: #1e90ff;
+}
+
+.student-item .email {
+  font-weight: 600;
+  color: #6d778a;
+  font-size: 14px;
+  letter-spacing: .5px;
+}
+
+.date {
+  display: block;
+  font-size: 14px;
+  color: #6a7679;
+  font-weight: 400;
+  width: 100%;
+  padding-top: 1.1em;
+  border-top: solid 1px #dcdcdc;
+  margin-top: 1.1em;
+}
+
+
+
+
+
+.pagination li {
+  display: inline;
+  padding: 0 3px;
+}
+
+.pagination li button {
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+  padding: 0.5em 0.85em;
+  background: #fff;
+  border: none;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #1e90ff;
+  box-shadow: 0 1px 8px 0 rgba(22, 42, 90, 0.05);
+  transition: 0.4s;
+}
+
+.pagination li button.active,
+.pagination li button:hover {
+  background-color: #1e90ff;
+  color: #fff;
+}
+
+
+.student-search span {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+ */
+
+
+.no-results {
+  font-family: 'Nunito', sans-serif;
+  display: block;
+  font-size: 1.5rem;
+  color: #6d778a;
+  width: 500px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+
+@media screen and (min-width: 700px) {
+  .header-container {
+    height: 90px;
+  }
+
+  header h2 {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+
+  .link-list li button {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+
+@media screen and (min-width: 992px) {
+
+  /* .mobile-uniName {
+    display: none;
+  }
+
+  .tablet-uniName {
+    display: block;
+  } */
+
+
+
+
+
+}
