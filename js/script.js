@@ -17,6 +17,39 @@ Create the `showPage` function
 This function will create and insert/append the elements needed to display a "page" of nine students
 */
 
+function showPage(array, page) {
+  const firstStudent = page * studentsPerPage - studentsPerPage;
+  const lastStudent = page * studentsPerPage - 1;
+  page = document.querySelector(".students-page");
+  console.log(page);
+  page.innerHTML = "";
+
+  for (let i = 0; i <= array.length; i++) {
+    if (i >= firstStudent && i <= lastStudent) {
+      const student = `<div class="col-12 col-sm-6 col-lg-4">
+      <div class="student-container silver-border">
+          <div class="student d-flex flex-column justify-content-center align-items-center">
+                <div class="student-avatar">
+                  <img class="round" src="${array[i].picture.large}">
+                </div>
+                <div class="student-name">
+                <h3>${array[i].name.first} ${array[i].name.last}</h3>
+                </div>
+                <div class="student-details">
+                <span class="student-email">${array[i].email}</span>
+                <div class="student-joined">
+                 <span class="student-email">Joined ${array[i].registered.date}</span>
+                </div>
+                </div>
+          </div>
+        </div>
+       </div>`;
+      console.log(student);
+      page.insertAdjacentHTML("beforeend", student);
+    }
+  }
+}
+
 /**
  * Builds the pagination controls for the student list and handles button interaction.
  *
