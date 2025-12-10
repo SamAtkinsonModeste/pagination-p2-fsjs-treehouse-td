@@ -30,33 +30,34 @@
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
-<body>
-
-  <div class="container-fluid gx-0 gy-0">
-    <!--  Full width header        -->
-    <header class="container-fluid header-container py-2">
-      <!--  Header Content  -->
-      <div
-        class="container-xxl d-flex flex-column align-items-center flex-md-row justify-content-between align-content-center py-2 ">
-        <h2 class="full-uniName d-none d-lg-inline">Lumina Tech University Students</h2>
-        <h2 class="short-uniName d-inline d-lg-none">LT University Students</h2>
-
-        <div class="input-container input-height position-relative" role="search" aria-label="Student directory search">
-          <input class="input-height full-width" type="text" name="search" id="student-search">
-          <label class="up-label" for="student-search">Search by name...</label>
-          <span class="search-icon"><img src="img/icn-search.svg" alt="" aria-hidden="true"></span>
-        </div>
 
 
+<div class="container-fluid gx-0 gy-0">
+  <!--  Full width header        -->
+  <header class="container-fluid header-container py-2">
+    <!--  Header Content  -->
+    <div
+      class="container-xxl d-flex flex-column align-items-center flex-md-row justify-content-between align-content-center py-2 ">
+      <h2 class="full-uniName d-none d-lg-inline">Lumina Tech University Students</h2>
+      <h2 class="short-uniName d-inline d-lg-none">LT University Students</h2>
+
+      <div class="input-container input-height position-relative" role="search" aria-label="Student directory search">
+        <input class="input-height full-width" type="text" name="search" id="student-search">
+        <label class="up-label" for="student-search">Search by name...</label>
+        <span class="search-icon"><img src="img/icn-search.svg" alt="" aria-hidden="true"></span>
       </div>
-      <!-- End of Header Content -->
-    </header>
-    <!-- End of Header -->
+
+
+    </div>
+    <!-- End of Header Content -->
+  </header>
+  <!-- End of Header -->
 
 
 
 
-    <div class="row g-4 students-page">
+  <div class="container-xxl students-wrapper">
+    <div class="row g-2 justify-content-center students-page">
 
       <!-- Dynamically insert students here
 
@@ -76,11 +77,13 @@
       -->
 
     </div>
+  </div>
 
-    <div class="container-fluid  pagination-buttons">
-      <ul class="d-flex justify-content-center link-list">
 
-        <!-- Dynamically insert pagination buttons here
+  <div class="container-fluid  pagination-buttons">
+    <ul class="d-flex justify-content-center link-list py-2">
+
+      <!-- Dynamically insert pagination buttons here
 
           EXAMPLE - Two pagination buttons, one with active class, one without:
 
@@ -93,14 +96,14 @@
 
         -->
 
-      </ul>
-    </div>
-
+    </ul>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script src="js/data.js"></script>
-  <script src="js/script.js"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
 </body>
 
 </html>
