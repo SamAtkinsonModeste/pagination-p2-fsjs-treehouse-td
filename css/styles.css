@@ -7,6 +7,7 @@
   --transparent1-prim-black-color: rgba(0, 0, 0, .8);
   --transparent2-prim-black-color: rgba(0, 0, 0, .6);
   --transparent3-prim-black-color: rgba(0, 0, 0, .5);
+  --form-el-bg-color: #1b1b1b;
   --image-container-grad-bg-color: #0a0402;
   --student-border-color: #5a5858;
   --transition-six-transform: transform .6s ease-in-out;
