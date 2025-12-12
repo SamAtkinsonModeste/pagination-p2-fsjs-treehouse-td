@@ -16,10 +16,6 @@
   --transition-five-transform: transform .5s ease-in-out;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'aptly', Helvetica, sans-serif;
   letter-spacing: 1px;
@@ -40,12 +36,9 @@ img {
   width: 100%;
 }
 
-
 .full-width {
   width: 100%;
 }
-
-
 
 .round {
   border-radius: 100%;
@@ -63,11 +56,7 @@ img {
   height: 150px;
 }
 
-
-
 header h2 {
-  font-family: amandine, sans-serif;
-  text-transform: uppercase;
   color: var(--text-color);
   letter-spacing: 2px;
   text-align: center;
@@ -75,21 +64,23 @@ header h2 {
   margin-bottom: 10px;
 }
 
+.uniName {
+  font-family: amandine, sans-serif;
+  text-transform: uppercase;
+}
 
 .tablet-uniName {
   display: none;
 }
 
-
-
 /*********************************
   STUDENT SEARCH ELEMENTS
 **********************************/
+
 .search-container {
   border-top: solid 1px red;
   border-bottom: solid 1px red;
 }
-
 
 .input-height {
   height: 50px;
@@ -101,7 +92,6 @@ header h2 {
   width: 300px;
 }
 
-
 #student-search {
   background: var(--form-el-bg-color);
   border-radius: 3px;
@@ -112,7 +102,6 @@ header h2 {
   border-bottom: 1px solid var(--accent-color);
   cursor: pointer;
 }
-
 
 .search-icon {
   position: absolute;
@@ -155,7 +144,6 @@ input:focus+.up-label {
   border-bottom: solid 1px red;
 }
 
-
 .link-list li button {
   width: 30px;
   height: 30px;
@@ -183,8 +171,6 @@ input:focus+.up-label {
   STUDENT CONTAINERS
 **********************************/
 
-
-
 .students-wrapper {
   margin-top: 150px;
   margin-bottom: 30px;
@@ -192,21 +178,30 @@ input:focus+.up-label {
   background: var(--transparent3-prim-black-color);
   border: solid 1px var(--accent-color);
   border-radius: 5px;
-
-
 }
 
-
-
-
-.student-container {
+.student-container,
+.student-not-found {
   width: 250px;
   background: var(--primary-black-color);
   color: var(--text-color);
   transition: var(--transition-six-transform);
 }
 
+.student-not-found {
+  width: 300px;
+  max-width: 1400px;
+  letter-spacing: 2px;
+}
 
+.student-not-found p {
+  font-size: 1.1rem;
+}
+
+.student-not-found span.uniName {
+  font-size: 1.2rem;
+  text-shadow: 0 1px 1px var(--accent-color);
+}
 
 .student-avatar {
   width: 90px;
@@ -217,7 +212,6 @@ input:focus+.up-label {
   margin: 5px 0;
   transition: var(--transition-five-transform);
 }
-
 
 .student-avatar img {
   filter: grayscale(100%) contrast(1.2) brightness(0.9);
@@ -233,7 +227,6 @@ input:focus+.up-label {
   font-size: 1.2rem;
   margin-bottom: 0.45em;
   text-shadow: 0 1px 1px var(--accent-color);
-
 }
 
 .student-details .student-email {
@@ -243,7 +236,6 @@ input:focus+.up-label {
 .student-joined {
   text-align: center;
 }
-
 
 .student-join-date {
   display: block;
@@ -256,13 +248,11 @@ input:focus+.up-label {
   margin: 1rem 0;
 }
 
-
 .student-wrap:hover .student-container {
   transform: scale(0.9);
   border-radius: 50%;
   cursor: zoom-in;
 }
-
 
 .student-wrap:hover .student-avatar {
   transform: translateX(-50px);
@@ -270,17 +260,6 @@ input:focus+.up-label {
 
 .student-wrap:hover .student-name {
   transform: translateX(40px) translateY(-6px);
-}
-
-
-.no-results {
-  font-family: 'Nunito', sans-serif;
-  display: block;
-  font-size: 1.5rem;
-  color: #6d778a;
-  width: 500px;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 /******************************
@@ -292,28 +271,29 @@ input:focus+.up-label {
 }
 
 /* Track background */
+
 ::-webkit-scrollbar-track {
   background: var(--primary-black-color);
-
 }
 
 /* Scrollbar thumb */
+
 ::-webkit-scrollbar-thumb {
   background: rgba(255, 000, 000, 0.4);
   border-radius: 10px;
 }
 
 /* Thumb on hover */
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 250, 240, 0.5);
-
 }
 
+/******************************
+    MEDIA QUERIES
+******************************/
 
-
-
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 768px) {
   .header-container {
     height: 80px;
   }
@@ -321,7 +301,6 @@ input:focus+.up-label {
   .students-wrapper {
     margin-top: 85px;
     margin-bottom: 60px;
-
   }
 
   header h2 {
@@ -329,10 +308,25 @@ input:focus+.up-label {
     margin-bottom: 0;
   }
 
-
-
-
+  .student-not-found {
+    width: 700px;
+  }
 }
 
+@media screen and (min-width: 992px) {
+  .student-not-found {
+    width: 900px;
+  }
+}
 
-@media screen and (min-width: 1200px) {}
+@media screen and (min-width: 1200px) {
+  .student-not-found {
+    width: 1100px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .student-not-found {
+    width: 1200px;
+  }
+}
