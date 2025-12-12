@@ -1,109 +1,85 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Lumina Tech University Students</title>
-  <link rel="apple-touch-icon" sizes="57x57" href="lumina-favicon/apple-icon-57x57.png">
-  <link rel="apple-touch-icon" sizes="60x60" href="lumina-favicon/apple-icon-60x60.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="lumina-favicon/apple-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="76x76" href="lumina-favicon/apple-icon-76x76.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="lumina-favicon/apple-icon-114x114.png">
-  <link rel="apple-touch-icon" sizes="120x120" href="lumina-favicon/apple-icon-120x120.png">
-  <link rel="apple-touch-icon" sizes="144x144" href="lumina-favicon/apple-icon-144x144.png">
-  <link rel="apple-touch-icon" sizes="152x152" href="lumina-favicon/apple-icon-152x152.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="lumina-favicon/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="lumina-favicon/android-icon-192x192.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="lumina-favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="lumina-favicon/favicon-96x96.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="lumina-favicon/favicon-16x16.png">
-  <link rel="manifest" href="lumina-favicon/manifest.json">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="msapplication-TileImage" content="lumina-favicon/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
 
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://use.typekit.net/kqt4pqo.css">
-
+  <title>Lumina Tech University Students</title><!-- FAVICONS Start   -->
+  <link href="lumina-favicon/apple-icon-57x57.png" rel="apple-touch-icon" sizes="57x57">
+  <link href="lumina-favicon/apple-icon-60x60.png" rel="apple-touch-icon" sizes="60x60">
+  <link href="lumina-favicon/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+  <link href="lumina-favicon/apple-icon-76x76.png" rel="apple-touch-icon" sizes="76x76">
+  <link href="lumina-favicon/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+  <link href="lumina-favicon/apple-icon-120x120.png" rel="apple-touch-icon" sizes="120x120">
+  <link href="lumina-favicon/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+  <link href="lumina-favicon/apple-icon-152x152.png" rel="apple-touch-icon" sizes="152x152">
+  <link href="lumina-favicon/apple-icon-180x180.png" rel="apple-touch-icon" sizes="180x180">
+  <link href="lumina-favicon/android-icon-192x192.png" rel="icon" sizes="192x192" type="image/png">
+  <link href="lumina-favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+  <link href="lumina-favicon/favicon-96x96.png" rel="icon" sizes="96x96" type="image/png">
+  <link href="lumina-favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+  <link href="lumina-favicon/manifest.json" rel="manifest">
+  <meta content="#ffffff" name="msapplication-TileColor">
+  <meta content="lumina-favicon/ms-icon-144x144.png" name="msapplication-TileImage">
+  <meta content="#ffffff" name="theme-color"><!-- FAVICONS End   -->
+  <!-- BOOTSTRAP STYESHEET   -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- ADOBE FONTS   -->
+  <link href="https://use.typekit.net/kqt4pqo.css" rel="stylesheet"><!-- CUSTOM STYLESHEET   -->
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
+<body>
+  <!--   Fluid Container of all ELEMENTS Start -->
 
 
-<div class="container-fluid gx-0 gy-0">
-  <!--  Full width header        -->
-  <header class="container-fluid header-container py-2">
-    <!--  Header Content  -->
-    <div
-      class="container-xxl d-flex flex-column align-items-center flex-md-row justify-content-between align-content-center py-2 ">
-      <h2 class="full-uniName d-none d-lg-inline">Lumina Tech University Students</h2>
-      <h2 class="short-uniName d-inline d-lg-none">LT University Students</h2>
+  <div class="container-fluid gx-0 gy-0">
+    <!--  Full width header        -->
 
-      <div class="input-container input-height position-relative" role="search" aria-label="Student directory search">
-        <input class="input-height full-width" type="text" name="search" id="student-search">
-        <label class="up-label" for="student-search">Search by name...</label>
-        <span class="search-icon"><img src="img/icn-search.svg" alt="" aria-hidden="true"></span>
+
+    <header class="container-fluid header-container py-2">
+      <!--  Header Content  -->
+
+
+      <div
+        class="container-xxl header-elements d-flex flex-column align-items-center flex-md-row justify-content-between align-content-center py-2">
+        <h2 class="full-uniName uniName d-none d-lg-inline">Lumina Tech University Students</h2>
+
+
+        <h2 class="short-uniName uniName d-inline d-lg-none">LT University Students</h2>
+        <!-- Dynamic Search Input Added Below  -->
       </div>
+      <!-- End of Header Content -->
+    </header>
+    <!-- End of Header -->
+    <!-- STUDENT CONTAINERS Start-->
 
 
+    <div class="container-xxl students-wrapper">
+      <div class="row g-2 justify-content-center students-page">
+        <!-- Students dynamically insert using Bootstrap Cols  -->
+      </div>
     </div>
-    <!-- End of Header Content -->
-  </header>
-  <!-- End of Header -->
+    <!-- STUDENT CONTAINERS End-->
+    <!-- PAGINATION ELEMENTS CONTAINERS Start-->
 
 
-
-
-  <div class="container-xxl students-wrapper">
-    <div class="row g-2 justify-content-center students-page">
-
-      <!-- Dynamically insert students here
-
-        EXAMPLE - Student list item:
-
-        <li class="student-item cf">
-          <div class="student-details">
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/25.jpg" alt="Profile Picture">
-            <h3>Ethel Dean</h3>
-            <span class="email">ethel.dean@example.com</span>
-          </div>
-          <div class="joined-details">
-            <span class="date">Joined 12-15-2005</span>
-          </div>
-        </li>
-
-      -->
-
+    <div class="container-fluid pagination-buttons">
+      <ul class="d-flex justify-content-center link-list py-2">
+        <!-- All li elements with nested buttons dynamically insert for pagination buttons -->
+      </ul>
     </div>
+    <!-- PAGINATION ELEMENTS CONTAINERS End-->
   </div>
-
-
-  <div class="container-fluid  pagination-buttons">
-    <ul class="d-flex justify-content-center link-list py-2">
-
-      <!-- Dynamically insert pagination buttons here
-
-          EXAMPLE - Two pagination buttons, one with active class, one without:
-
-          <li>
-            <button type="button" class="active">1</button>
-          </li>
-          <li>
-            <button type="button">2</button>
-          </li>
-
-        -->
-
-    </ul>
-  </div>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-<script src="js/data.js"></script>
-<script src="js/script.js"></script>
+  <!--   Fluid Container of all ELEMENTS Ends -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <script src="js/data.js">
+  </script>
+  <script src="js/script.js">
+  </script>
 </body>
 
 </html>
